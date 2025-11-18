@@ -22,7 +22,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={`w-full bg-transparent relative z-[50]`}>
+    <header className={`w-full bg-transparent relative`}>
       {/* Desktop Version */}
       <div className="hidden md:block">
         {/* Green line extending full width of screen */}
