@@ -23,4 +23,38 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme for English language */
+body.lang-en {
+  background: #13182c;
+  color: #ffffff;
+}
+
+body.lang-en .text-gray-900,
+body.lang-en .text-gray-700,
+body.lang-en .text-gray-600,
+body.lang-en h1,
+body.lang-en h2,
+body.lang-en h3,
+body.lang-en p {
+  color: #ffffff !important;
+}
+
+body.lang-en .bg-white {
+  background-color: #13182c !important;
+}
+
+body.lang-en .bg-gray-50 {
+  background-color: #1a2342 !important;
+}
+
+body.lang-en header {
+  background-color: #13182c !important;
+  border-color: #22c55e !important;
+}
+
+body.lang-en .border-gray-200 {
+  border-color: #2d3a5a !important;
 }
