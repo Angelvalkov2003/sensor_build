@@ -31,19 +31,19 @@ export default function Home() {
         <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto -mt-[40rem]">
             <h1
-              className={`text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white drop-shadow-lg`}
+              className={`text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white drop-shadow-lg`}
             >
               {t.title}
             </h1>
             {t.subtitle && (
               <h2
-                className={`text-lg sm:text-xl md:text-3xl mb-8 text-white/90 drop-shadow-md`}
+                className={`text-2xl sm:text-xl md:text-3xl mb-8 text-white/90 drop-shadow-md`}
               >
                 {t.subtitle}
               </h2>
             )}
             {t.tagline && (
-              <p className="text-base sm:text-lg md:text-2xl text-[#22c55e] font-semibold mb-12 drop-shadow-md">
+              <p className="text-xl sm:text-lg md:text-2xl text-[#22c55e] font-semibold mb-12 drop-shadow-md">
                 {t.tagline}
               </p>
             )}

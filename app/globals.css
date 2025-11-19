@@ -42,6 +42,12 @@ body.lang-en p {
   color: #ffffff !important;
 }
 
+/* Keep green color for tagline text */
+body.lang-en p[class*="text-[#22c55e]"],
+body.lang-en [class*="text-[#22c55e]"] {
+  color: #22c55e !important;
+}
+
 body.lang-en .bg-white {
   background-color: #13182c !important;
 }
