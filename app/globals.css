@@ -44,8 +44,10 @@ body.lang-bg p {
 
 /* Keep green color for tagline text */
 body.lang-bg p[class*="text-[#388644]"],
-body.lang-bg [class*="text-[#388644]"] {
-  color: #388644 !important;
+body.lang-bg [class*="text-[#388644]"],
+body.lang-bg p[class*="text-[#4da855]"],
+body.lang-bg [class*="text-[#4da855]"] {
+  color: #4da855 !important;
 }
 
 body.lang-bg .bg-white {

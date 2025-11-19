@@ -26,7 +26,7 @@ export default function Header() {
       {/* Desktop Version */}
       <div className="hidden md:block">
         {/* Green line extending full width of screen */}
-        <div className="absolute left-0 right-0 top-[51%] -translate-y-1/2 h-[0.40rem] bg-[#388644] pointer-events-none z-20"></div>
+        <div className="absolute left-0 right-0 top-[51%] -translate-y-1/2 h-[0.49rem] bg-[#388644] pointer-events-none z-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Logo with line extending to the end */}
           <div className="relative py-4">
@@ -54,10 +54,10 @@ export default function Header() {
                       href={item.href}
                       className={`text-lg font-bold transition-colors ${
                         pathname === item.href
-                          ? "text-[#388644] border-b-2 border-[#388644] pb-0.5"
+                          ? "text-[#4da855] border-b-2 border-[#4da855] pb-0.5"
                           : lang === "bg"
-                          ? "text-white hover:text-[#388644]"
-                          : "text-[#388644] hover:text-[#2d6b35]"
+                          ? "text-white hover:text-[#4da855]"
+                          : "text-[#4da855] hover:text-[#388644]"
                       }`}
                     >
                       {item.name}
@@ -97,7 +97,7 @@ export default function Header() {
       {/* Mobile Version */}
       <div className="md:hidden relative">
         {/* Green line extending full width of screen */}
-        <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-[#388644] pointer-events-none z-20"></div>
+        <div className="absolute left-0 right-0 top-[50.5%] -translate-y-1/2 h-[0.30rem] bg-[#388644] pointer-events-none z-20"></div>
         <div className="flex items-center justify-between px-4 py-4 relative z-10">
           <Link href="/" className="flex items-center">
             <Image
@@ -131,29 +131,27 @@ export default function Header() {
             </div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 rounded-md transition-colors ${
-                isMenuOpen ? "bg-[#388644]" : "bg-gray-100"
-              }`}
+              className="p-2 rounded-md transition-colors bg-transparent"
               aria-label="Toggle menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
                 <span
                   className={`block h-0.5 w-6 transition-all ${
                     isMenuOpen
-                      ? "bg-white rotate-45 translate-y-2"
-                      : "bg-gray-700"
+                      ? "bg-[#388644] rotate-45 translate-y-2"
+                      : "bg-[#388644]"
                   }`}
                 ></span>
                 <span
                   className={`block h-0.5 w-6 transition-all ${
-                    isMenuOpen ? "bg-white opacity-0" : "bg-gray-700"
+                    isMenuOpen ? "bg-[#388644] opacity-0" : "bg-[#388644]"
                   }`}
                 ></span>
                 <span
                   className={`block h-0.5 w-6 transition-all ${
                     isMenuOpen
-                      ? "bg-white -rotate-45 -translate-y-2"
-                      : "bg-gray-700"
+                      ? "bg-[#388644] -rotate-45 -translate-y-2"
+                      : "bg-[#388644]"
                   }`}
                 ></span>
               </div>
