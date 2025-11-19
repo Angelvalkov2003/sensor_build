@@ -8,11 +8,7 @@ export default function Footer() {
   const t = translations[lang].footer;
 
   return (
-    <footer
-      className={`relative z-[100] text-white py-8 ${
-        lang === "en" ? "bg-[#0d1220]" : "bg-gray-900"
-      }`}
-    >
+    <footer className="relative z-[100] text-white py-8 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
           <div className="text-center md:text-left">

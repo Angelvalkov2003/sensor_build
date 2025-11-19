@@ -30,7 +30,7 @@ export default function Home() {
       <div className="relative z-[2] pt-16 md:pt-0 flex-grow">
         {/* Hero Section with centered main text */}
         <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto -mt-[40rem]">
+          <div className="text-center max-w-4xl mx-auto -mt-[20rem]">
             <h1
               className={`text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white drop-shadow-lg`}
             >

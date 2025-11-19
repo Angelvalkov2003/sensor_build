@@ -42,12 +42,19 @@ body.lang-bg p {
   color: #ffffff !important;
 }
 
-/* Keep green color for tagline text */
+/* Keep green color for tagline text - but exclude navigation */
 body.lang-bg p[class*="text-[#388644]"],
 body.lang-bg [class*="text-[#388644]"],
 body.lang-bg p[class*="text-[#4da855]"],
 body.lang-bg [class*="text-[#4da855]"] {
   color: #4da855 !important;
+}
+
+/* Override for navigation - keep white text on Bulgarian */
+body.lang-bg header nav a[class*="text-white"],
+body.lang-bg header nav a.text-white,
+body.lang-bg header nav a {
+  color: #ffffff !important;
 }
 
 body.lang-bg .bg-white {

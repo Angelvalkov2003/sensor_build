@@ -22,7 +22,11 @@ export default function Header() {
   ];
 
   return (
-    <header className={`w-full bg-transparent relative z-50`}>
+    <header
+      className={`w-full relative z-50 ${
+        lang === "bg" ? "bg-[#13182c]" : "bg-white"
+      }`}
+    >
       {/* Desktop Version */}
       <div className="hidden md:block">
         {/* Green line extending full width of screen */}
@@ -45,7 +49,6 @@ export default function Header() {
                 </div>
               </Link>
 
-              {/* Navigation buttons centered horizontally */}
               <nav className="flex-1 flex justify-center -mt-10">
                 <div className="flex space-x-12">
                   {navigation.map((item) => (
@@ -54,10 +57,12 @@ export default function Header() {
                       href={item.href}
                       className={`text-lg font-bold transition-colors ${
                         pathname === item.href
-                          ? "text-[#4da855] border-b-2 border-[#4da855] pb-0.5"
+                          ? lang === "bg"
+                            ? "text-white border-b-2 border-white pb-0.5"
+                            : "text-black border-b-2 border-black pb-0.5"
                           : lang === "bg"
                           ? "text-white hover:text-[#4da855]"
-                          : "text-[#4da855] hover:text-[#388644]"
+                          : "text-black hover:text-[#4da855]"
                       }`}
                     >
                       {item.name}
