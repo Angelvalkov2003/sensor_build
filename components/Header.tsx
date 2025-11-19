@@ -67,25 +67,23 @@ export default function Header() {
               </nav>
 
               {/* Language switch on the right */}
-              <div className="flex items-center space-x-2 -mt-10">
+              <div className="flex items-center space-x-1 -mt-12">
                 <button
                   onClick={() => setLang("bg")}
-                  className={`px-2 py-1 text-xs font-medium rounded ${
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-md text-white transition-all duration-200 ${
                     lang === "bg"
-                      ? "bg-[#22c55e] text-white"
-                      : lang === "en"
-                      ? "text-white hover:bg-gray-700"
-                      : "text-gray-700 hover:bg-gray-100"
+                      ? "bg-[#16a34a] shadow-md"
+                      : "bg-[#22c55e]/40 hover:bg-[#22c55e]/60"
                   }`}
                 >
                   BG
                 </button>
                 <button
                   onClick={() => setLang("en")}
-                  className={`px-2 py-1 text-xs font-medium rounded ${
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-md text-white transition-all duration-200 ${
                     lang === "en"
-                      ? "bg-[#22c55e] text-white"
-                      : "text-gray-700 hover:bg-gray-100"
+                      ? "bg-[#16a34a] shadow-md"
+                      : "bg-[#22c55e]/40 hover:bg-[#22c55e]/60"
                   }`}
                 >
                   EN
@@ -112,20 +110,20 @@ export default function Header() {
             />
           </Link>
 
-          <div className="flex items-center space-x-2 -mt-10">
+          <div className="flex items-center space-x-2 -mt-12">
             <div className="flex items-center space-x-1">
               <button
                 onClick={() => setLang("bg")}
-                className={`px-2 py-1 text-xs font-medium rounded ${
-                  lang === "bg" ? "bg-[#22c55e] text-white" : "text-gray-700"
+                className={`px-3 py-1.5 text-xs font-semibold rounded-md text-white transition-all duration-200 ${
+                  lang === "bg" ? "bg-[#16a34a] shadow-md" : "bg-[#22c55e]/40"
                 }`}
               >
                 BG
               </button>
               <button
                 onClick={() => setLang("en")}
-                className={`px-2 py-1 text-xs font-medium rounded ${
-                  lang === "en" ? "bg-[#22c55e] text-white" : "text-gray-700"
+                className={`px-3 py-1.5 text-xs font-semibold rounded-md text-white transition-all duration-200 ${
+                  lang === "en" ? "bg-[#16a34a] shadow-md" : "bg-[#22c55e]/40"
                 }`}
               >
                 EN
