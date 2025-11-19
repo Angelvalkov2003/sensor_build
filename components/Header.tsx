@@ -26,7 +26,7 @@ export default function Header() {
       {/* Desktop Version */}
       <div className="hidden md:block">
         {/* Green line extending full width of screen */}
-        <div className="absolute left-0 right-0 top-[51%] -translate-y-1/2 h-[0.49rem] bg-[#388644] pointer-events-none z-20"></div>
+        <div className="absolute left-0 right-0 top-[51%] -translate-y-1/2 h-[0.49rem] bg-gradient-to-r from-[#4da855] to-[#388644] pointer-events-none z-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Logo with line extending to the end */}
           <div className="relative py-4">
@@ -39,7 +39,7 @@ export default function Header() {
                     alt="Sensor Build Logo"
                     width={200}
                     height={80}
-                    className="h-auto w-auto"
+                    className="h-auto w-auto bg-transparent"
                     priority
                   />
                 </div>
@@ -97,7 +97,7 @@ export default function Header() {
       {/* Mobile Version */}
       <div className="md:hidden relative">
         {/* Green line extending full width of screen */}
-        <div className="absolute left-0 right-0 top-[50.5%] -translate-y-1/2 h-[0.30rem] bg-[#388644] pointer-events-none z-20"></div>
+        <div className="absolute left-0 right-0 top-[50.5%] -translate-y-1/2 h-[0.30rem] bg-gradient-to-r from-[#4da855] to-[#388644] pointer-events-none z-20"></div>
         <div className="flex items-center justify-between px-4 py-4 relative z-10">
           <Link href="/" className="flex items-center">
             <Image
@@ -105,7 +105,7 @@ export default function Header() {
               alt="Sensor Build Logo"
               width={120}
               height={48}
-              className="h-auto w-auto"
+              className="h-auto w-auto bg-transparent"
               priority
             />
           </Link>
@@ -161,7 +161,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="bg-[#388644] px-4 py-2 relative z-50">
+          <nav className="bg-gradient-to-b from-[#4da855]/90 to-[#388644]/90 backdrop-blur-sm px-4 py-2 relative z-50 animate-slide-down">
             <div className="flex flex-col space-y-2">
               {navigation.map((item) => (
                 <Link

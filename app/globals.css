@@ -67,3 +67,26 @@ body.lang-en {
   background: #ffffff !important;
   color: #171717;
 }
+
+/* Transparent background for logos */
+img[alt="Sensor Build Logo"] {
+  background: transparent !important;
+}
+
+/* Expand down animation from logo height */
+@keyframes expand-down {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: expand-down 0.3s ease-out;
+}
