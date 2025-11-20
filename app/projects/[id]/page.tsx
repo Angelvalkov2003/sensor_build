@@ -54,7 +54,7 @@ export default function ProjectPage() {
         <button
           onClick={() => router.back()}
           className={`mb-8 flex items-center gap-2 ${
-            lang === "en"
+            lang === "bg"
               ? "text-white hover:text-gray-300"
               : "text-gray-700 hover:text-gray-900"
           }`}
@@ -110,8 +110,16 @@ export default function ProjectPage() {
               </CarouselContent>
               {images.length > 1 && (
                 <>
-                  <CarouselPrevious className="left-4 md:left-6 bg-transparent hover:bg-transparent text-white border-0 shadow-none h-12 w-12" />
-                  <CarouselNext className="right-2 md:right-2 bg-transparent hover:bg-transparent text-white border-0 shadow-none h-12 w-12" />
+                  <CarouselPrevious
+                    className={`left-4 md:left-6 bg-transparent hover:bg-transparent border-0 shadow-none h-12 w-12 ${
+                      lang === "bg" ? "text-white" : "text-gray-900"
+                    }`}
+                  />
+                  <CarouselNext
+                    className={`right-2 md:right-2 bg-transparent hover:bg-transparent border-0 shadow-none h-12 w-12 ${
+                      lang === "bg" ? "text-white" : "text-gray-900"
+                    }`}
+                  />
                 </>
               )}
             </Carousel>
@@ -125,7 +133,7 @@ export default function ProjectPage() {
               <p
                 key={index}
                 className={`text-lg leading-relaxed ${
-                  lang === "en" ? "text-white" : "text-gray-700"
+                  lang === "bg" ? "text-white" : "text-gray-700"
                 }`}
               >
                 {paragraph}

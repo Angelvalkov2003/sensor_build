@@ -101,6 +101,12 @@ export const translations = {
       project3: {
         title: 'ВиК инсталации',
         imageTitle: 'ВиК инсталации',
+        mainImage: '/project3/20250723_174911_main.webp',
+        images: [
+          '/project3/20250723_174911_main.webp',
+          '/project3/20250723_174903.webp',
+          '/project3/20251013_135225.webp',
+        ],
         content: [
           'Извършваме изграждане и ремонт на цялостни водопроводни и канализационни инсталации с акцент върху дълготрайност и безпроблемна експлоатация. Какво включват дейностите:',
           'Проектиране и планиране – определяме оптималните трасета за водопровод и канализация според разположението на кухня, баня и мокри помещения.',
@@ -279,6 +285,12 @@ export const translations = {
       project3: {
         title: 'Plumbing Installations',
         imageTitle: 'Plumbing Installations',
+        mainImage: '/project3/20250723_174911_main.webp',
+        images: [
+          '/project3/20250723_174911_main.webp',
+          '/project3/20250723_174903.webp',
+          '/project3/20251013_135225.webp',
+        ],
         content: [
           'We build and repair complete water supply and drainage systems focused on durability and problem-free operation. The process includes:',
           'Design and planning – choosing optimal routes for water and sewer lines.',
