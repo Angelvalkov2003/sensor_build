@@ -67,8 +67,16 @@ export const translations = {
     projects: {
       title: 'Проекти',
       project1: {
-        title: 'Проект 1 – Освежителен ремонт',
+        title: 'Освежителен ремонт',
         imageTitle: 'Освежителен ремонт',
+        mainImage: '/20250714_170625_main.webp',
+        images: [
+          '/20250714_170625_main.webp',
+          '/20250702_143515.webp',
+          '/20250704_145730.webp',
+          '/20250704_145923.webp',
+          '/20250713_183946.webp',
+        ],
         content: [
           'Извършваме цялостен освежителен ремонт на жилища и други площи, като работим прецизно и чисто, за да върнем свежестта и комфорта в помещението. Какво включва процесът:',
           'Подготовка на обекта – опаковаме мебелите и защитаваме пода и дограмата, за да предотвратим замърсяване или увреждане.',
@@ -79,7 +87,7 @@ export const translations = {
         ],
       },
       project2: {
-        title: 'Проект 2 – Ел. инсталации',
+        title: 'Ел. инсталации',
         imageTitle: 'Цялостно изграждане на електрическа',
         content: [
           'Извършваме цялостно изграждане и подмяна на електрически инсталации, като гарантираме безопасност, надеждност и дълъг експлоатационен живот. Какво включва услугата:',
@@ -91,7 +99,7 @@ export const translations = {
         ],
       },
       project3: {
-        title: 'Проект 3 – ВиК инсталации',
+        title: 'ВиК инсталации',
         imageTitle: 'ВиК инсталации',
         content: [
           'Извършваме изграждане и ремонт на цялостни водопроводни и канализационни инсталации с акцент върху дълготрайност и безпроблемна експлоатация. Какво включват дейностите:',
@@ -104,7 +112,7 @@ export const translations = {
         ],
       },
       project4: {
-        title: 'Проект 4 – Подово отопление',
+        title: 'Подово отопление',
         imageTitle: 'Изграждане на водно подово отопление',
         content: [
           'Извършваме цялостно изграждане на водно подово отопление, което осигурява комфорт, равномерно затопляне и енергийна ефективност. Какво включва процесът:',
@@ -117,7 +125,7 @@ export const translations = {
         ],
       },
       project5: {
-        title: 'Проект 5 – Гипсокартон',
+        title: 'Гипсокартон',
         imageTitle: 'Гипсокартон',
         content: [
           'Извършваме полагане на гипсокартон. Какво включват процесите:',
@@ -128,7 +136,7 @@ export const translations = {
         ],
       },
       project6: {
-        title: 'Проект 6 – Осветление',
+        title: 'Осветление',
         imageTitle: 'Осветление',
         content: [
           'Извършваме на цялостен монтаж на осветление – от стандартни осветителни тела до модерни LED системи и скрито осветление. Какво включва услугата:',
@@ -237,8 +245,16 @@ export const translations = {
     projects: {
       title: 'Projects',
       project1: {
-        title: 'Project 1 – Refreshing Renovation',
+        title: 'Refreshing Renovation',
         imageTitle: 'Refreshing Renovation',
+        mainImage: '/20250714_170625_main.webp',
+        images: [
+          '/20250714_170625_main.webp',
+          '/20250702_143515.webp',
+          '/20250704_145730.webp',
+          '/20250704_145923.webp',
+          '/20250713_183946.webp',
+        ],
         content: [
           'We carry out complete refreshing renovations of homes and other spaces, working cleanly and precisely to restore comfort and freshness. The process includes:',
           'Site preparation – covering furniture, protecting floors and window frames to avoid damage.',
@@ -249,7 +265,7 @@ export const translations = {
         ],
       },
       project2: {
-        title: 'Project 2 – Electrical Installations',
+        title: 'Electrical Installations',
         imageTitle: 'Full Electrical System Installation',
         content: [
           'We build and replace complete electrical systems ensuring safety, reliability, and long service life. The service includes:',
@@ -261,7 +277,7 @@ export const translations = {
         ],
       },
       project3: {
-        title: 'Project 3 – Plumbing Installations',
+        title: 'Plumbing Installations',
         imageTitle: 'Plumbing Installations',
         content: [
           'We build and repair complete water supply and drainage systems focused on durability and problem-free operation. The process includes:',
@@ -274,7 +290,7 @@ export const translations = {
         ],
       },
       project4: {
-        title: 'Project 4 – Underfloor Heating',
+        title: 'Underfloor Heating',
         imageTitle: 'Water Underfloor Heating Installation',
         content: [
           'We install complete water underfloor heating systems that provide comfort, even heating, and high energy efficiency:',
@@ -287,7 +303,7 @@ export const translations = {
         ],
       },
       project5: {
-        title: 'Project 5 – Drywall',
+        title: 'Drywall',
         imageTitle: 'Drywall',
         content: [
           'We perform full drywall installation. The process includes:',
@@ -298,7 +314,7 @@ export const translations = {
         ],
       },
       project6: {
-        title: 'Project 6 – Lighting',
+        title: 'Lighting',
         imageTitle: 'Lighting',
         content: [
           'We perform complete lighting installation — from standard fixtures to modern LED systems and hidden lighting. The service includes:',

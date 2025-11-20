@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProjectModalProps {
@@ -9,15 +9,22 @@ interface ProjectModalProps {
   project: {
     title: string;
     imageTitle: string;
+    mainImage?: string;
+    images?: string[];
     content: string[];
   };
 }
 
 export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
   const { lang } = useLanguage();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const images = project.images || (project.mainImage ? [project.mainImage] : []);
+  
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setCurrentImageIndex(0);
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -25,6 +32,14 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   if (!isOpen) return null;
 
@@ -47,6 +62,69 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
           </button>
         </div>
         <div className="p-6">
+          {/* Images carousel */}
+          {images.length > 0 && (
+            <div className="mb-6">
+              <div className="relative">
+                <img
+                  src={images[currentImageIndex]}
+                  alt={`${project.imageTitle} ${currentImageIndex + 1}`}
+                  className="w-full h-auto rounded-lg object-cover"
+                />
+                {images.length > 1 && (
+                  <>
+                    {/* Previous button */}
+                    <button
+                      onClick={prevImage}
+                      className={`absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all ${lang === 'en' ? 'text-white' : 'text-white'}`}
+                      aria-label="Previous image"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    {/* Next button */}
+                    <button
+                      onClick={nextImage}
+                      className={`absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all ${lang === 'en' ? 'text-white' : 'text-white'}`}
+                      aria-label="Next image"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                    {/* Image indicators */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                      {images.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`h-2 rounded-full transition-all ${
+                            index === currentImageIndex
+                              ? 'bg-white w-8'
+                              : 'bg-white bg-opacity-50 w-2 hover:bg-opacity-75'
+                          }`}
+                          aria-label={`Go to image ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          )}
           <div className="space-y-4">
             {project.content.map((paragraph, index) => (
               <p key={index} className={`leading-relaxed ${lang === 'en' ? 'text-white' : 'text-gray-700'}`}>
