@@ -133,6 +133,11 @@ export const translations = {
       project5: {
         title: 'Гипсокартон',
         imageTitle: 'Гипсокартон',
+        mainImage: '/project5/20251109_145613_main-ezgif.com-jpg-to-webp-converter.webp',
+        images: [
+          '/project5/20251109_084251-ezgif.com-jpg-to-webp-converter.webp',
+          '/project5/20251109_145613_main-ezgif.com-jpg-to-webp-converter.webp',
+        ],
         content: [
           'Извършваме полагане на гипсокартон. Какво включват процесите:',
           'Оглед и подготовка – измерваме, планираме и избираме най-подходящата система (конструкция, окачване, изолация).',
@@ -144,6 +149,13 @@ export const translations = {
       project6: {
         title: 'Осветление',
         imageTitle: 'Осветление',
+        mainImage: '/project6/20250925_132227_main.webp',
+        images: [
+          '/project6/20250925_132227_main.webp',
+          '/project6/20241219_163427.webp',
+          '/project6/20251001_145701.webp',
+          '/project6/20251115_182915.webp',
+        ],
         content: [
           'Извършваме на цялостен монтаж на осветление – от стандартни осветителни тела до модерни LED системи и скрито осветление. Какво включва услугата:',
           'Планиране на осветлението – определяме оптималните точки за монтаж, мощност и тип осветление според помещението.',
@@ -317,6 +329,11 @@ export const translations = {
       project5: {
         title: 'Drywall',
         imageTitle: 'Drywall',
+        mainImage: '/project5/20251109_145613_main-ezgif.com-jpg-to-webp-converter.webp',
+        images: [
+          '/project5/20251109_145613_main-ezgif.com-jpg-to-webp-converter.webp',
+          '/project5/20251109_084251-ezgif.com-jpg-to-webp-converter.webp',
+        ],
         content: [
           'We perform full drywall installation. The process includes:',
           'Inspection and preparation – measurements, planning, and selecting the most suitable system.',
@@ -328,6 +345,13 @@ export const translations = {
       project6: {
         title: 'Lighting',
         imageTitle: 'Lighting',
+        mainImage: '/project6/20250925_132227_main.webp',
+        images: [
+          '/project6/20250925_132227_main.webp',
+          '/project6/20241219_163427.webp',
+          '/project6/20251001_145701.webp',
+          '/project6/20251115_182915.webp',
+        ],
         content: [
           'We perform complete lighting installation — from standard fixtures to modern LED systems and hidden lighting. The service includes:',
           'Lighting planning – defining optimal mounting points and light output.',
