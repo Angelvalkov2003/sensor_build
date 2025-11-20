@@ -4,6 +4,14 @@ import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/lib/translations';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import { Card, CardContent } from '@/components/ui/card';
 
 export default function ProjectPage() {
   const params = useParams();
@@ -23,48 +31,17 @@ export default function ProjectPage() {
 
   const project = projects[projectId];
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
   const images = (project as any).images || ((project as any).mainImage ? [(project as any).mainImage] : []);
 
   useEffect(() => {
     if (!project) {
       router.push('/projects');
     }
-    setCurrentImageIndex(0);
   }, [project, router]);
 
   if (!project) {
     return null;
   }
-
-  const nextImage = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-      setIsTransitioning(false);
-    }, 150);
-  };
-
-  const prevImage = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-      setIsTransitioning(false);
-    }, 150);
-  };
-
-  const goToImage = (index: number) => {
-    if (isTransitioning || index === currentImageIndex) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentImageIndex(index);
-      setIsTransitioning(false);
-    }, 150);
-  };
 
   return (
     <div className={`min-h-screen ${lang === 'bg' ? 'bg-[#13182c]' : 'bg-white'}`}>
@@ -95,82 +72,32 @@ export default function ProjectPage() {
 
         {/* Images carousel */}
         {images.length > 0 && (
-          <div className="mb-12">
-            <div className="flex justify-center">
-              <div className="relative max-w-md w-full">
-                <div className="relative aspect-[3/4] w-full flex items-center justify-center overflow-hidden">
-                  <div className="relative w-full h-full">
-                    {images.map((image: string, index: number) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`${project.imageTitle} ${index + 1}`}
-                        className={`absolute inset-0 w-full h-full object-contain rounded-lg transition-opacity duration-300 ${
-                          index === currentImageIndex
-                            ? 'opacity-100 z-10'
-                            : 'opacity-0 z-0'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  {images.length > 1 && (
-                    <>
-                      {/* Previous button */}
-                      <button
-                        onClick={prevImage}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-900 p-3 rounded-full transition-all shadow-lg z-10"
-                        aria-label="Previous image"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                        </svg>
-                      </button>
-                      {/* Next button */}
-                      <button
-                        onClick={nextImage}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-900 p-3 rounded-full transition-all shadow-lg z-10"
-                        aria-label="Next image"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                      {/* Image counter */}
-                      <div className="absolute top-2 right-2 bg-white bg-opacity-90 text-gray-900 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md">
-                        {currentImageIndex + 1} / {images.length}
-                      </div>
-                      {/* Image indicators */}
-                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 bg-white bg-opacity-80 px-3 py-1.5 rounded-full">
-                        {images.map((_: string, index: number) => (
-                          <button
-                            key={index}
-                            onClick={() => goToImage(index)}
-                            className={`rounded-full transition-all ${
-                              index === currentImageIndex
-                                ? 'bg-gray-900 w-8 h-2'
-                                : 'bg-gray-400 w-2 h-2 hover:bg-gray-600'
-                            }`}
-                            aria-label={`Go to image ${index + 1}`}
+          <div className="mb-12 flex justify-center">
+            <Carousel className="w-full max-w-md">
+              <CarouselContent className="-ml-0">
+                {images.map((image: string, index: number) => (
+                  <CarouselItem key={index} className="pl-0">
+                    <div className="p-0">
+                      <Card className="border-0 shadow-none bg-transparent">
+                        <CardContent className="flex aspect-[3/4] items-center justify-center p-0">
+                          <img
+                            src={image}
+                            alt={`${project.imageTitle} ${index + 1}`}
+                            className="w-full h-full object-contain rounded-lg"
                           />
-                        ))}
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              {images.length > 1 && (
+                <>
+                  <CarouselPrevious className="left-2 md:left-4 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-900 border-0 shadow-lg h-10 w-10" />
+                  <CarouselNext className="right-2 md:right-4 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-900 border-0 shadow-lg h-10 w-10" />
+                </>
+              )}
+            </Carousel>
           </div>
         )}
 
