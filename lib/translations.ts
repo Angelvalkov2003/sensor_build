@@ -90,6 +90,13 @@ export const translations = {
       project2: {
         title: 'Ел. инсталации',
         imageTitle: 'Цялостно изграждане на електрическа',
+        mainImage: '/project2/20250806_190332_main-ezgif.com-jpg-to-webp-converter.webp',
+        images: [
+          '/project2/20250806_190332_main-ezgif.com-jpg-to-webp-converter.webp',
+          '/project2/20250506_115318-ezgif.com-jpg-to-webp-converter.webp',
+          '/project2/20250806_190601-ezgif.com-jpg-to-webp-converter.webp',
+          '/project2/20250908_091236-ezgif.com-jpg-to-webp-converter.webp',
+        ],
         content: [
           'Извършваме цялостно изграждане и подмяна на електрически инсталации, като гарантираме безопасност, надеждност и дълъг експлоатационен живот. Какво включва услугата:',
           'Планиране на инсталацията – определяме оптималното разположение на всички електрически точки и мощностите според нуждите на помещението.',
@@ -287,6 +294,13 @@ export const translations = {
       project2: {
         title: 'Electrical Installations',
         imageTitle: 'Full Electrical System Installation',
+        mainImage: '/project2/20250806_190332_main-ezgif.com-jpg-to-webp-converter.webp',
+        images: [
+          '/project2/20250806_190332_main-ezgif.com-jpg-to-webp-converter.webp',
+          '/project2/20250506_115318-ezgif.com-jpg-to-webp-converter.webp',
+          '/project2/20250806_190601-ezgif.com-jpg-to-webp-converter.webp',
+          '/project2/20250908_091236-ezgif.com-jpg-to-webp-converter.webp',
+        ],
         content: [
           'We build and replace complete electrical systems ensuring safety, reliability, and long service life. The service includes:',
           'Electrical layout planning – determining optimal placement of all power and lighting points.',
