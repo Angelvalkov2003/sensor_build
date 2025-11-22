@@ -20,6 +20,7 @@ export default function Home() {
   const t = translations[lang].home;
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const projectImages = [
     "/project4/20251008_150415_main-ezgif.com-jpg-to-webp-converter.webp",
@@ -51,6 +52,19 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [api]);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      ) || window.innerWidth < 768;
+      setIsMobile(isMobileDevice);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <div
@@ -320,7 +334,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               {t.callNow && (
                 <a
-                  href="tel:+359878344020"
+                  href={isMobile ? "tel:+359878344020" : "/contacts"}
                   className="w-full sm:w-auto px-8 py-4 bg-[#388644] text-white text-lg font-semibold rounded-lg hover:bg-[#2d6b35] transition-colors text-center"
                 >
                   {t.callNow}

@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
 import AnimatedDiv from "@/components/AnimatedDiv";
+import Image from "next/image";
 
 export default function Contacts() {
   const { lang } = useLanguage();
@@ -183,43 +184,81 @@ export default function Contacts() {
           </AnimatedDiv>
 
           {/* Location Section */}
-          <AnimatedDiv
-            className={`rounded-lg p-8 text-center md:col-span-2 ${
-              lang === "bg" ? "bg-[#1a2342]" : "bg-gray-50"
-            }`}
+          <a
+            href="https://maps.app.goo.gl/GQd1NkYntmNriNnG9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block md:col-span-2"
           >
-            <div className="w-16 h-16 bg-[#388644] rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg
-                className="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <AnimatedDiv
+              className={`rounded-lg p-8 text-center cursor-pointer transition-all hover:shadow-lg hover:scale-[1.02] ${
+                lang === "bg" ? "bg-[#1a2342]" : "bg-gray-50"
+              }`}
+            >
+              <div className="w-16 h-16 bg-[#388644] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+              <h2
+                className={`text-2xl font-semibold mb-4 ${
+                  lang === "bg" ? "text-white" : "text-gray-900"
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
+                {t.location}
+              </h2>
+              <p className={lang === "bg" ? "text-white" : "text-gray-600"}>
+                {t.locationText}
+              </p>
+            </AnimatedDiv>
+          </a>
+        </div>
+
+        {/* Partners Section */}
+        <div className="mt-16 md:mt-24">
+          <div className="text-center mb-8">
             <h2
-              className={`text-2xl font-semibold mb-4 ${
+              className={`text-3xl md:text-4xl font-bold mb-4 ${
                 lang === "bg" ? "text-white" : "text-gray-900"
               }`}
             >
-              {t.location}
+              {t.partners}
             </h2>
-            <p className={lang === "bg" ? "text-white" : "text-gray-600"}>
-              {t.locationText}
-            </p>
-          </AnimatedDiv>
+          </div>
+          <div className="flex justify-center">
+            <AnimatedDiv>
+              <a
+                href="https://www.instagram.com/park.decor/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExQ3FNZmJuSWM1VmpQMXk1N3NydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7DVvPRNyx8z7vSfsa1zRtTaH9fPS6F9FXSKcsQdAdAQ8O4WzEIz-jXvZps9Q_aem_saKG-a9eKwZDiTnlQhYH3w"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block transition-transform hover:scale-105"
+              >
+                <Image
+                  src="/partner1.jpg"
+                  alt="Partner"
+                  width={300}
+                  height={300}
+                  className="rounded-lg shadow-lg cursor-pointer"
+                />
+              </a>
+            </AnimatedDiv>
+          </div>
         </div>
       </div>
     </div>

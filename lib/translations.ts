@@ -203,7 +203,8 @@ export const translations = {
         sunday: 'Неделя: Почивен ден',
       },
       location: 'Локация',
-      locationText: 'София, България',
+      locationText: 'Poduyane, g.k. Suhata Reka 219А, 1505 Sofia',
+      partners: 'Нашите Партньори',
     },
     footer: {
       copyright: `© ${new Date().getFullYear()} Sensor Build. Всички права запазени.`,
@@ -416,6 +417,7 @@ export const translations = {
       },
       location: 'Location',
       locationText: 'Sofia, Bulgaria',
+      partners: 'Our Partners',
     },
     footer: {
       copyright: `© ${new Date().getFullYear()} Sensor Build. All rights reserved.`,
