@@ -1,15 +1,6 @@
 @import "tailwindcss";
 
-/* Noah Bold font - add font file to public/fonts/ if available */
-@font-face {
-  font-family: "Noah Bold";
-  src: url("/fonts/Noah-Bold.woff2") format("woff2"),
-       url("/fonts/Noah-Bold.woff") format("woff"),
-       url("/fonts/Noah-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* Noah Bold font - using Century Gothic as fallback since font files are not available */
 
 :root {
   --background: #ffffff;
@@ -22,7 +13,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-century-gothic: "Century Gothic", "CenturyGothic", AppleGothic, sans-serif;
-  --font-noah-bold: "Noah Bold", "Century Gothic", "CenturyGothic", sans-serif;
+  --font-noah-bold: "Century Gothic", "CenturyGothic", AppleGothic, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
