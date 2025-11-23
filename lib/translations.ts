@@ -203,7 +203,7 @@ export const translations = {
         sunday: 'Неделя: Почивен ден',
       },
       location: 'Локация',
-      locationText: 'Poduyane, g.k. Suhata Reka 219А, 1505 Sofia',
+      locationText: 'Poduyane, g.k. Suhata Reka 219А, 1505 Sofia, Bulgaria',
       partners: 'Нашите Партньори',
     },
     footer: {
@@ -416,7 +416,7 @@ export const translations = {
         sunday: 'Sunday: Day off',
       },
       location: 'Location',
-      locationText: 'Sofia, Bulgaria',
+      locationText: 'Poduyane, g.k. Suhata Reka 219А, 1505 Sofia, Bulgaria',
       partners: 'Our Partners',
     },
     footer: {

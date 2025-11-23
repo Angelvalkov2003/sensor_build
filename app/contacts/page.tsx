@@ -250,7 +250,7 @@ export default function Contacts() {
                 className="block transition-transform hover:scale-105"
               >
                 <Image
-                  src="/partner1.jpg"
+                  src={lang === "en" ? "/partner1_en.png" : "/partner1_bg.png"}
                   alt="Partner"
                   width={300}
                   height={300}
